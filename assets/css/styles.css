@@ -1,0 +1,10 @@
+@media (max-width: 580px) {
+  .hero-txt {
+    width: 300px;
+  }
+}
+
+.hero-txt {
+  max-width: 600px;
+}
+
