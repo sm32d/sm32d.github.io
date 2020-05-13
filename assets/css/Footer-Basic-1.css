@@ -33,14 +33,14 @@
 }
 
 .footer-basic .social > a {
-  font-size: 40px;
+  font-size: 24px;
   width: 40px;
   height: 40px;
   line-height: 40px;
   display: inline-block;
   text-align: center;
   border-radius: 50%;
-  border: 1px solid #000000;
+  border: 1px solid #ccc;
   margin: 0 8px;
   color: inherit;
   opacity: 0.75;
@@ -56,27 +56,5 @@
   font-size: 13px;
   color: #aaa;
   margin-bottom: 0;
-}
-
-.fab.fa-instagram:hover {
-  color: rgb(255,255,255) !important;
-}
-
-.icon.ion-ios-email:hover {
-  color: rgb(216,129,218) !important;
-}
-
-.fab.fa-telegram-plane:hover {
-  color: rgb(31,225,214) !important;
-}
-
-.fab.fa-spotify:hover {
-  color: rgb(139,217,147) !important;
-}
-
-.projects-btn:hover {
-  background-color: rgb(174,53,53) !important;
-  color: rgb(255,255,255) !important;
-  border-color: rgb(67,2,2);
 }
 
