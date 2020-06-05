@@ -80,3 +80,7 @@
   border-color: rgb(67,2,2);
 }
 
+.404-btn:hover {
+  background-color: #fcf2d3 !important;
+}
+
