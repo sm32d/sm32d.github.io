@@ -6,8 +6,10 @@ html, body {
     box-sizing: border-box;
     overflow-x: hidden;
     font-size: 62.5%;
-    background: linear-gradient(to right, #cc95c0, #dbd4b4, #7aa1d2)!important;
-    /* background: linear-gradient(to right, #bbd2c5, #536976)!important; */
+    background: linear-gradient(to right, #141e30, #243b55)!important;
+    /* background: linear-gradient(to right, #b92b27, #1565c0)!important; */
+    /* background: linear-gradient(to right, #3a6186, #89253e)!important; */
+    /* background: linear-gradient(to right, #c94b4b, #4b134f)!important; */
     background: #000000;
     color: #ffffff;
     height: 100vh;
