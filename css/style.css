@@ -17,6 +17,7 @@ html, body {
 
 a {
     text-decoration: none;
+    color: inherit;
 }
 
 ul {
@@ -104,12 +105,6 @@ footer > div {
     padding-bottom: 1.5rem;
 }
 
-footer .copyright {
-    padding-top: 3rem;
-    font-size: 1.5rem;
-    font-family: Pangolin;
-}
-
 footer > div .social {
     font-size: 3.7rem;
     display: flex;
@@ -119,6 +114,30 @@ footer > div .social {
 
 footer > div .social .social-link {
     padding: 0 1.1rem;
+}
+
+footer .language {
+    padding-top: 1rem;
+}
+
+footer .language .lang a:hover {
+    color: #80cbc9;
+}
+
+footer .language .lang {
+    font-size: 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+}
+
+footer .language .lang .lang-link {
+    padding-left: 1rem;
+}
+
+footer .copyright {
+    font-size: 1.5rem;
+    font-family: Pangolin;
 }
 
 @media only screen and (max-width: 750px) {
