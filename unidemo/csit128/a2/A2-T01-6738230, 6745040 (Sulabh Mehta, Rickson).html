@@ -1,0 +1,512 @@
+<html>
+  <head>
+  	<title>A2-T01 6738230, 6745040 (Sulabh Mehta, Rickson)</title>
+    <style>
+      .center {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .p1 {
+            font-family: Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+      }
+
+      .p1 th {
+            background-color:rgb(190, 231, 250);
+            font-size: 20px;
+            padding: 10px;
+      }
+
+      .p1 td {
+            padding: 8px;
+      }
+
+      /* makes input text field non editable */
+      .no-edit {
+          pointer-events: none;
+      }
+
+      /* for errors in part 2*/
+      .err {
+            color: red;
+            font-style: italic;
+      }
+
+      .center_text {
+          text-align: center;
+      }
+
+      /* for errors in part 3*/
+      .err2 {
+            color: blue;
+            font-style: italic;
+      }
+
+      h1 {
+            margin-top: 10px;
+      }
+    </style>
+  </head>
+  <body>
+  	<!-- Part 1 -->
+    <div>
+      <table class="p1 center" border="1" width="50%">
+        <tr>
+          <th colspan="3">CSIT128: Assignment 2</th>
+          <th>Tutorial 01</th>
+        </tr>
+        <tr>
+        	<td rowspan="3" width="20%">Student Number / Name / Email</td>
+          <td>6738230</td>
+          <td>Sulabh Mehta</td>
+          <td>sm323@uowmail.edu.au</td>
+        </tr>
+        <tr>
+          <td>6745040</td> 
+          <td>Rickson</td>
+          <td>r024@mymail.sim.edu.sg</td> 
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table> 
+    </div>
+    <!-- Part 1 -->
+    <hr>
+    <!-- Part 2 -->
+    <h1 class="center_text">Part 2</h1>
+    <form class="center_text" action="https://translate.google.com" method="GET" onsubmit="return validateForm()">
+      <table class="center">
+        <tr>
+          <td>Name:</td>
+          <td>
+            <!--Using pattern to contrain the input-->
+            <input type="text" id="name" name="name" size="30"><!-- required pattern="^[A-Z]([A-Z]|[a-z]|\s)*$" -->
+            <span class="err" id="name_err"></span>
+          </td>
+        </tr>
+        <tr>
+          <td>Module code:</td>
+          <td>
+            <input type="text" id="module" name="code" size="30">
+            <span class="err" id="mod_err"></span>
+          </td>
+        </tr>
+        <tr>
+          <td>Current Date:</td>
+          <td><input type="text" name="date" id="currentDate" class="no-edit" size="30"></td>
+        </tr>
+        <tr>
+          <td>Number of weeks till end of the year:</td>
+          <td><label id="daysTillEnd"></label></td><!-- To display the number of weeks -->
+        </tr>
+        <tr>
+          <td>Source Language:</td>
+          <td>
+            <select name="sl">
+              <option value="en" selected>English</option>
+              <option value="zh-CN">Chinese</option>
+              <option value="ms">Malay</option> 
+              <option value="id">Indonesian</option>
+              <option value="ja">Japanese</option>
+              <option value="ko">Korean</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td>Target Language:</td>
+          <td>
+              <input type="radio" name="tl" value="en">English
+              <input type="radio" name="tl" value="zh-CN">Chinese
+              <input type="radio" name="tl" value="ms">Malay 
+              <input type="radio" name="tl" value="id">Indonesian
+              <input type="radio" name="tl" value="ja" checked = "checked">Japanese
+              <input type="radio" name="tl" value="ko">Korean
+          </td>
+        </tr>
+        <tr>
+          <td>Text to translate:</td>
+          <td>
+            <textarea name="text" id="textToTranslate" cols="20" rows="3">Hello testing</textarea>
+            <span class="err" id="text_err"></span>
+          </td>
+        </tr>
+        <!-- Find Text & Replacement Text -->
+        <tr>
+          <td>Find Text: </td>
+          <td><input id="findText" type="text" name="findtext" onchange="emptyValidation()"></td>         
+        </tr>
+        <tr>
+          <td>Replacement Text: </td>
+          <td><input id="repText" type="text" name="reptext"></td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td>
+            <button id="findRepButton" type="button" onclick="ReplaceText()"> Find and Replace</button>
+            <span id="message"></span>
+          </td> <!-- Find & Replace Button -->
+        </tr>
+
+      </table> 
+      <br>
+      <input type="submit" value="Translate">
+      <input type="reset" value="Reset form"> 
+    </form>
+    <!-- Part 2 -->
+    <hr>
+    <!-- Part 3 -->
+    <h1 class="center_text">Part 3</h1>
+    <div class="center_text">
+      <table class="center">
+        <tr>
+          <td>Please enter the lowest number: </td>
+          <td> <!-- onchange to validate every time the input changes -->
+            <input type="text" onchange="validateLowNum()" id="min_num" size="25">
+            <span class="err2" id="low_num_err"></span> <!-- to show error -->
+          </td>
+        </tr>
+        <tr>
+          <td>Please enter the highest number: </td>
+          <td>
+            <input type="text" onchange="validateHighNum()" id="max_num" size="25">
+            <span class="err2" id="high_num_err"></span>
+          </td>
+        </tr>
+      </table>
+      <br> 
+      <input type="button" id="playButton" value="Play" onclick="play()">
+      <br><br>
+      <table class="center">
+        <tr>
+          <td>Your guess:</td>
+          <td><input type="text" name="guessNum" id="guessNum"></td>
+          <td>
+            <button type="button" id="guessButton" onclick="guess()">Guess</button>
+          </td>
+          <td><span id="guess_msg"></span></td>
+        </tr>
+        <tr>
+          <td colspan ='3'><span id="guessList"></span></td>
+        </tr>
+      </table>
+    </div>
+    <script>
+      var today = new Date(); // current date
+      // store the value of months
+      var months = ['January', 'February', 'March', 'April', 'May', 'June', 
+                      'July', 'August', 'September', 'October', 'November', 'December'],
+      days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+      hour = today.getHours(); // gets current hour
+      var ampm;
+
+      // changing hours from 24 hr format to 12 hr format
+      if (hour > 12) {
+          hour = hour - 12;
+          ampm = 'PM';
+      }
+      else {
+          ampm = 'AM';
+      }
+
+      if (hour === 0)
+          hour = 12;
+
+      // creating date and time String
+      var dateNtime = today.getDate() + ' ' + months[today.getMonth()] + ' ' + today.getFullYear() +
+                      ' ' + days[today.getDay()] + ' ' + hour + ':' + (today.getMinutes()<10?'0':'') + today.getMinutes() + ' ' + ampm;
+      // display the date and time on the text input                     // Some changes in getMinutes()
+      document.getElementById('currentDate').value = dateNtime;
+
+      // function to calculate days between 2 dates
+      function days_between(date1, date2) {
+          // The number of milliseconds in one day
+          const ONE_DAY = 1000 * 60 * 60 * 24;
+
+          // Calculate the difference in milliseconds
+          const differenceMs = Math.abs(date1 - date2);
+
+          // Convert back to days and return
+          return Math.round(differenceMs / ONE_DAY);
+      }
+
+      function getWeeksDays(numberOfDays) {
+          var weeks = 0, restOfDays;
+          if (numberOfDays >= 7) {
+              weeks = Math.floor(numberOfDays / 7);
+              restOfDays = numberOfDays % 7;
+          }
+          return weeks + " week(s) and " +  restOfDays + " days";
+      }
+
+      // If the Find Text is empty, Replacement Text can't be edited
+      emptyValidation();  // call the function to instantly check the find text box after F5
+
+      function emptyValidation() {   
+          var findText = document.getElementById("findText").value;
+          
+          if (findText == null || findText == ""){
+              document.getElementById("repText").disabled = true;
+              document.getElementById("findRepButton").disabled = true;
+          }
+          else{
+              document.getElementById("repText").disabled = false;
+              document.getElementById("findRepButton").disabled = false;
+          }
+      }
+
+      // Find & Replace Function
+      function ReplaceText() {
+          var findText = document.getElementById("findText").value;
+          var repText = document.getElementById("repText").value;
+          var str = document.getElementById("textToTranslate").value;
+          var count = (str.match(new RegExp(findText, 'g'))).length;
+          //var count = findText.split(" ").length;
+          
+          str = str.replace(new RegExp(findText, 'g'), repText);   // Replace the text with replace()
+
+          // Change the text inside the Text Area
+          document.getElementById("textToTranslate").value = str;
+
+          
+          // Count How many Replacements
+          document.getElementById("message").innerHTML= " " + count + " replacement(s) has been made"
+
+      }
+
+      var dec312020 = new Date(2020, 11, 31);
+      document.getElementById('daysTillEnd').innerHTML = getWeeksDays(days_between(today, dec312020));
+
+      // validates name, module and source text in translate
+      function validateForm () {
+        // check and show errors
+        nameCheck();
+        moduleCheck();
+        sourceTextCheck();
+        // validate if the form can be submitted
+        if (nameCheck() && moduleCheck() && sourceTextCheck()) {
+          return true;
+        }
+        else
+          return false;
+      }
+
+      function nameCheck() { // validate name field
+			var nameValue = document.getElementById("name").value;
+			nameValue = nameValue.trim(); // remove whitespaces
+			var pattname = /^[A-Za-z ]+$/; // legit pattern
+			var isNameValid = pattname.test(nameValue); // boolean: entered name matches pattern?
+      var firstCharName = nameValue.charAt(0); // first character
+      var nameError = document.getElementById("name_err"); // html where error has to be displayed
+			
+			if (isNameValid) // contains only alphabets
+			{
+				if (firstCharName == firstCharName.toUpperCase())
+				{ // first character uppercase, everything ok...
+          nameError.innerHTML = "";
+          return true; //everything fine
+				}
+				else // first char has to be uppercase
+				{
+					var firstLetterMsg = "Must start with an upper case letter";
+					nameError.innerHTML = firstLetterMsg;
+				}
+			}
+			else //either empty or has characters other than alphabets
+			{
+				if (nameValue == "") {
+          nameError.innerHTML = "The text box must not be empty"
+        }
+        else {
+          var nameInvalidMsg = "Contains number or special character";
+				  nameError.innerHTML = nameInvalidMsg;
+        }
+			}
+			return false; // got problems in name
+    }
+    
+    function sourceTextCheck () {
+      var transText = document.getElementById('textToTranslate').value; // get textbox value
+          if (transText.trim() == "") { // textbox empty
+              document.getElementById("text_err").innerHTML = "Textbox cannot be empty!";
+              return false; // got problems
+          }
+          else { // ok
+              document.getElementById("text_err").innerHTML = "";
+              document.getElementById('textToTranslate').value = transText.trim();
+          }
+          return true; // everything ok
+    }
+
+    function moduleCheck() {
+      var moduleText = document.getElementById("module").value; // get module entered
+      moduleText = moduleText.trim(); //remove leading whitespaces
+			var firstThree = moduleText.substring(0, 3); //first 3 characters
+			var nextFour = moduleText.substring(3, 7); // next 4
+			var patt = /^[a-z0-9]+$/; //pattern for module code
+      var patt1 = /^[a-z]+$/; // pattern for first 3 characters
+      
+      var modError = document.getElementById("mod_err"); // html where error is displayed
+			
+			var isValid = patt.test(moduleText); // if module code matches the given pattern
+			var isValid1 = patt1.test(firstThree); // if first three characters are lower case characters only
+			
+			if (moduleText.length == 7 && isValid){  
+        if (moduleText.charAt(3) == '0') { // the first digit after 3 characters contains 0
+          modError.innerHTML = "first digit cannot be 0";
+        }
+				else if (isValid1 && !isNaN(nextFour)) // everything is okay
+				{
+          modError.innerHTML = "";
+          return true; // pass
+        } 
+        else { // last 4 characters contain a non-digit (non-number) character
+					modError.innerHTML = "Last 4 characters must be digits";
+				}
+      }
+      else if (moduleText.length != 7) { //length more or less than 7
+        if (moduleText == ""){ // it is empty, allowed
+          modError.innerHTML = "";
+          return true; // pass
+        }
+        modError.innerHTML = "Invalid length!"
+      }
+			else //contain special character or first alphabet is uppercase
+			{
+        if (moduleText.charAt(0) == moduleText.charAt(0).toUpperCase()) {
+          modError.innerHTML = "Must start with 3 lower case alphabets";
+        }
+        else {
+          var specialMsg = "Cannot contain special characters or capital letters";
+          modError.innerHTML = specialMsg;
+        }
+      }
+      return false;
+		}
+
+      const play_button = document.getElementById('playButton')
+      play_button.disabled = true; // play button disabled until user enters legit values for min and max number
+
+      function validateLowNum () {
+          var lnum = document.getElementById('min_num').value;
+          var ln_err = document.getElementById('low_num_err');
+
+          if (isNaN(lnum)) { // if not a number
+              ln_err.innerHTML = "this is not a number";
+              play_button.disabled = true;
+          }
+          else if (lnum.trim() < 0) { // if number is negative
+              ln_err.innerHTML = "the number must be greater or equal to zero";
+              play_button.disabled = true;
+          } 
+          else if (!lnum.match(/\S/)){ //if textbox empty
+              ln_err.innerHTML = "this field can't be empty";
+              play_button.disabled = true;
+          }
+          else { //everything ok
+              ln_err.innerHTML = "";
+              validateHighNum();
+          }
+      }
+
+      function validateHighNum () {
+          var hnum = document.getElementById('max_num').value;
+          var lnum = document.getElementById('min_num').value;
+          var hn_err = document.getElementById('high_num_err');
+          
+          if (!hnum.match(/\S/)){ // empty textbox
+              hn_err.innerHTML = "this field can't be empty";
+              play_button.disabled = true;
+          }
+          else if (isNaN(hnum)) { // not a number
+              hn_err.innerHTML = "this is not a number";
+              play_button.disabled = true;
+          }
+          else if (hnum.trim() < 0) { //negative number
+              hn_err.innerHTML = "the number must be greater or equal to zero";
+              play_button.disabled = true;
+          }
+          else if (parseInt(hnum) < parseInt(lnum)) {
+              hn_err.innerHTML = "highest number must be larger than the lowest number";
+              play_button.disabled = true;
+          }
+          else { // everything ok
+              hn_err.innerHTML = "";
+              play_button.disabled = false;
+          }
+      }
+
+      // generates a random whole number beteween a given range (both inclusive)
+      function randomNumber(min, max) {  
+          return Math.floor(Math.random() * (max + 1 - min) + min); 
+      }
+
+      const guess_button = document.getElementById('guessButton');
+      guess_button.disabled = true; // guess button disabled until user press play button
+      var rand;
+      var gMessage = document.getElementById('guess_msg'); // area to display message after every guess
+      var gList = document.getElementById("guessList"); // area to display the final msg
+      var data, i, j;
+
+      // Play button to generate random number and start the game
+      function play() {
+          guess_button.disabled = false;
+          gList.innerHTML = "";
+          gMessage.innerHTML = "";
+          // properly eliminating all blank spaces and making it a number
+          var min = Math.ceil(document.getElementById('min_num').value.trim());
+          var max = Math.ceil(document.getElementById('max_num').value.trim());
+          // var rand = randomNumber(minimum, maximum);
+          rand = randomNumber(min, max); // generate random number in given range
+          data = new Array(); // array to store the list of guesses
+          i = 0; // initialise array pointer
+          j = 1; // guess number
+      }
+
+
+
+      function guess() {
+          
+          var guessNum = document.getElementById('guessNum').value;
+
+          if (guessNum > rand){
+              gMessage.innerHTML = "too high";
+              data[i] = "Your guess number " + j + " is " + guessNum + " and it is too high"
+          }
+          else if (guessNum < rand) {
+              gMessage.innerHTML = "too low";
+              data[i] = "Your guess number " + j + " is " + guessNum + " and it is too low"
+          }
+          else {
+              gMessage.innerHTML = "correct";
+              data[i] = "Your guess number " + j + " is " + guessNum + " and it is Correct"
+              guessList();
+              guess_button.disabled = true; // disable guess button after game over
+          }
+
+          if (i == 4){ // max attempts reached
+              data[i] += " and this is the last try"
+              guessList();
+              guess_button.disabled = true; // disable guess button after game over
+          }
+          i++;
+          j++;
+      }
+
+      // for printing the List 
+      function guessList() {
+          var content = "Your Target Number: " + rand + "<br/>";
+
+          for (var k = 0; k < data.length; k++){
+              content+=data[k] + "<br/>"
+          }
+
+          gList.innerHTML = content;
+      }
+
+    </script>
+  </body>
+</html>
