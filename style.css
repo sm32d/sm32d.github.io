@@ -1,0 +1,37 @@
+/* fonts */
+@font-face {
+  font-family: Pangolin;
+  src: url("fonts/Pangolin-Regular.ttf");
+}
+
+@font-face {
+  font-family: Muli;
+  src: url("fonts/Muli-Regular.ttf");
+}
+/* fonts */
+
+body {
+  background: #023d3c;
+  background: -webkit-linear-gradient(top left, #023d3c, #000000);
+  background: -moz-linear-gradient(top left, #023d3c, #000000);
+  background: linear-gradient(to bottom right, #023d3c, #000000);
+}
+
+.pulse {
+  animation: heart-pulse 3s infinite ease-in-out;
+}
+
+@keyframes heart-pulse {
+  0% {
+    transform: scale(1); /* scaling to 0 */
+  }
+  50% {
+    transform: scale(1.2); /* increasing the size */
+  }
+  100% {
+    transform: scale(1); /* seeting back to initial size */
+  }
+}
+.social-link {
+  padding: 0.5rem 0.8rem;
+}
