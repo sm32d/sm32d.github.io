@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <title>Passey - The Password Generator</title>
+</head>
+<body class = "flex flex-col justify-center items-center">
+    <h1 class="m-10 text-2xl font-bold">Passey</h1>
+    <div class="mx-10">
+        <span>Length of the password: </span> 
+        <input class="border-b-2 border-red-500 focus:bg-red-50 outline-none md:ml-5 m-1 py-0.5 md:m-0 px-3 text-grey-darkest" required type="text" id="len">
+        <br>
+        <span>Include: </span><br>
+        <input class="mt-2" type="checkbox" name="include" id="incNumbers" value="nums">
+        <label for="incNumbers"> Numbers</label>
+        <br>
+        <input type="checkbox" name="include" id="incSpl" value="spl">
+        <label for="incSpl"> Special Characters (@ # ! * ^ & $ %)</label>
+        <br>
+        <button onclick="random()" class="focus:outline-none mt-4 bg-red-700 font-bold text-white px-5 py-1 rounded hover:bg-red-200 hover:text-red-900">Generate</button>
+        <button onclick="reset()" class="ml-5 focus:outline-none mt-4 bg-red-700 font-bold text-white px-5 py-1 rounded hover:bg-red-200 hover:text-red-900">Reset</button>
+    </div>
+    <div class="mx-10 mt-3">
+        Password Generated: <input class="md:ml-5 outline-none" type="text" id="res" readonly>
+    </div>
+
+
+    <script src="passey.js" defer></script>
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/409f51dbb6.js" crossorigin="anonymous"></script>
+</body>
+</html>
