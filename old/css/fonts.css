@@ -1,9 +1,9 @@
 @font-face {
     font-family: Pangolin;
-    src: url('../fonts/Pangolin-Regular.ttf');
+    src: url('/fonts/Pangolin-Regular.ttf');
 }
 
 @font-face {
     font-family: Muli;
-    src: url('../fonts/Muli-Regular.ttf')
+    src: url('/fonts/Muli-Regular.ttf')
 }
