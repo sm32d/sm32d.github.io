@@ -1,65 +1,386 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Hi! I'm Dominik, an undegrad Computer Science student based in Singapore.">
-    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" type="image/png" href="./assets/favicon-alt.png"/>
-    <title>dominik (Sulabh Mehta)</title>
-</head>
-<body class="bg-black text-white">
-    <main class="flex flex-col justify-center items-center h-screen">
-        <div class="hero flex flex-col justify-center items-center"> <!-- pt-28 pb-16 -->
-            <div class="w-72 h-72">
-                <img class="pulse" src="assets/dominik_logo.png" alt="logo">
-            </div>
-            <h3 class="text-2xl max-w-screen-sm text-center pb-6 px-6 -mt-2" style="font-family: Muli;">
-                Hi! I'm Dominik, an undergrad Computer Science student based in Singapore.
-                I like to program while listening to music.
-            </h3>
-        </div>
-        <footer class="flex flex-col justify-center items-center">
-            <ul class="flex flex-wrap justify-center items-center text-5xl max-w-sm md:max-w-lg mb-5">
-                <li class="social-link">
-                    <a href="https://bitbucket.org/sm32d" target="_blank"><i class=" text-blue-400 fab fa-bitbucket"></i></a>
-                </li>
-                <li class="social-link">
-                    <a href="https://github.com/sm32d" target="_blank"><i class="fab fa-github-alt"></i></a>
-                </li>
-                <li class="social-link">
-                    <a href="mailto:hi@prodominik.me"><i class="text-yellow-300 far fa-envelope"></i></a>
-                </li>
-                <li class="social-link">
-                    <a href="http://linkedin.com/in/sm32d" target="_blank"><i class="fab fa-linkedin"></i></a>
-                </li>
-                <li class="social-link">
-                    <a href="https://instagram.com/sm32d" target="_blank"><i class="text-red-500 fab fa-instagram"></i></a>
-                </li>
-                <li class="social-link">
-                    <a href="https://t.me/sm32d" target="_blank"><i class="text-yellow-100 fab fa-telegram-plane"></i></a>
-                </li>
-                <li class="social-link">
-                    <a href="https://open.spotify.com/user/1r6chbsq087jrt3tng66f3q5i?si=vBPKpgTwTDSG9cXyMBhGkw" target="_blank"><i class="text-green-500 fab fa-spotify"></i></a>
-                </li>   
-            </ul>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-            <div class="mb-2" style="font-family: Pangolin;">
-                <span>Dominik © 2021 | All Rights Reserved</span>
+    <title>Sulabh Mehta (Dominik)</title>
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/unicons.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+
+    <!-- MAIN STYLE -->
+    <link rel="stylesheet" href="css/tooplate-style.css">
+
+    <style>
+      .dev-banner {
+        position: fixed;
+        bottom: 40px;
+        left: 10%;
+        right: 10%;
+        width: 80%;
+        padding: 10px 15px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color: #eee;
+        border-radius: 5px;
+        box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
+        z-index: 9;
+      }
+      .close {
+        height: 20px;
+        background-color: #777;
+        border: none;
+        color: white;
+        border-radius: 2px;
+        cursor: pointer;
+      }
+    </style>
+    
+<!--
+
+Tooplate 2115 Marvel
+
+https://www.tooplate.com/view/2115-marvel
+
+-->
+  </head>
+  <body>
+
+    <!-- MENU -->
+    <nav class="navbar navbar-expand-sm navbar-light">
+        <div class="container">
+            <a class="navbar-brand" href="index.html"><!-- <i class='uil uil-user'></i> --> SM</a>
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+                <span class="navbar-toggler-icon"></span>
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <!-- <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                        <a href="#about" class="nav-link"><span data-hover="About">About</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#project" class="nav-link"><span data-hover="Projects">Projects</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#resume" class="nav-link"><span data-hover="Resume">Resume</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#contact" class="nav-link"><span data-hover="Contact">Contact</span></a>
+                    </li>
+                </ul> -->
+
+                <ul class="navbar-nav ml-lg-auto">
+                    <div class="ml-lg-4">
+                      <div class="color-mode d-lg-flex justify-content-center align-items-center">
+                        <i class="color-mode-icon"></i>
+                        
+                      </div>
+                    </div>
+                </ul>
             </div>
-        </footer>
-        <script type="text/javascript" src="//wcs.naver.net/wcslog.js"></script>
-        <script type="text/javascript">
-            if(!wcs_add) var wcs_add = {};
-            wcs_add["wa"] = "5e4c767c387198";
-            if(window.wcs) {
-                wcs_do();
-            }
-        </script>
-    </main>
-     <!-- Font Awesome -->
-     <script src="https://kit.fontawesome.com/409f51dbb6.js" crossorigin="anonymous"></script>
-</body>
+        </div>
+    </nav>
+
+    <!-- ABOUT -->
+    <section class="about full-screen d-lg-flex justify-content-center align-items-center" id="about">
+        <div class="container">
+            <div class="row">
+                
+                <div class="col-lg-7 col-md-12 col-12 d-flex align-items-center">
+                    <div class="about-text">
+                        <small class="small-text">Welcome to <span class="mobile-block">my portfolio website!</span></small>
+                        <h1 class="animated animated-text">
+                            <span class="mr-2">Hey folks, I'm</span>
+                                <div class="animated-info">
+                                    <span class="animated-item">Sulabh Mehta</span>
+                                    <span class="animated-item">Data Analyst</span>
+                                    <span class="animated-item">Developer</span>
+                                </div>
+                        </h1>
+
+                        <p>Enthusiastic learner of new and upcoming technology that can be used to make a difference.</p>
+                        
+                        <div class="custom-btn-group mt-4">
+                          <a href="resume.pdf" download="Sulabh_Mehta_Resume" class="btn mr-lg-2 custom-btn"><i class='uil uil-file-alt'></i> Download Resume</a>
+                          <a href="https://github.com/sm32d" class="btn mr-lg-2 custom-btn hero-social" target="_blank"><i class="fab fa-github-alt"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-5 col-md-12 col-12">
+                    <div class="about-image svg">
+                        <img src="images/undraw/undraw_software_engineer_lvl5.svg" class="img-fluid" alt="svg image">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section class="project py-5" id="project">
+        <div class="container">
+                
+                <div class="row">
+                  <div class="col-lg-11 text-center mx-auto col-12">
+
+                      <div class="col-lg-8 mx-auto">
+                        <h2>Things I have made</h2>
+                      </div>
+
+                      <div class="owl-carousel owl-theme">
+                        <div class="item">
+                          <div class="project-info">
+                            <a href="https://pred.sulabh.ru" target="_blank"><img src="images/project/project-image01.png" class="img-fluid" alt="project image"></a>
+                          </div>
+                        </div>
+
+                        <div class="item">
+                          <div class="project-info">
+                            <a href="passey/index.html" target="_blank"><img src="images/project/project-image02.png" class="img-fluid" alt="project image"></a>
+                          </div>
+                        </div>
+
+                        <div class="item">
+                          <div class="project-info">
+                            <a href="https://blog.sulabh.xyz" target="_blank"><img src="images/project/project-image03.png" class="img-fluid" alt="project image"></a>
+                          </div>
+                        </div>
+
+                        <!-- <div class="item">
+                          <div class="project-info">
+                            <img src="images/project/project-image04.png" class="img-fluid" alt="project image">
+                          </div>
+                        </div>
+
+                        <div class="item">
+                          <div class="project-info">
+                            <img src="images/project/project-image05.png" class="img-fluid" alt="project image">
+                          </div>
+                        </div> -->
+                      </div>
+
+                  </div>
+                </div>
+        </div>
+    </section>
+
+    <!-- FEATURES -->
+    <section class="resume py-5 d-lg-flex justify-content-center align-items-center" id="resume">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-lg-6 col-12">
+                  <h2 class="mb-4">Experiences</h2>
+
+                    <div class="timeline">
+                        <div class="timeline-wrapper">
+                             <div class="timeline-yr">
+                                  <span>2022</span>
+                             </div>
+                             <div class="timeline-info">
+                                  <h3><span>Data Analysis Project</span></h3>
+                                  <p>Used various ML algorithms to predict and classify data after cleaning the provided datasets.</p>
+                             </div>
+                        </div>
+
+                        <div class="timeline-wrapper">
+                            <div class="timeline-yr">
+                                <span>2021</span>
+                            </div>
+                            <div class="timeline-info">
+                                <h3><span>Room Booking App</span></h3>
+                                <p>Created the database in MySQL for a room reservation app project in University. Also contributed in some front-end pages with ReactJS.</p>
+                            </div>
+                        </div>
+
+                        <div class="timeline-wrapper">
+                            <div class="timeline-yr">
+                                <span>2021</span>
+                            </div>
+                            <div class="timeline-info">
+                                <h3><span>Blog Website</span></h3>
+                                <p>NextJS app, assisted by Tailwind CSS, that displays markdown pages as blog posts. Practised NextJS page routing to do client-side page transitions.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="timeline-wrapper">
+                            <div class="timeline-yr">
+                                <span>2021</span>
+                            </div>
+                            <div class="timeline-info">
+                                <h3><span>Basic Password Generator</span></h3>
+                                <p>Simple java and javascript app to generate random passwords based on users' choice of characters.</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="col-lg-6 col-12">
+                  <h2 class="mb-4 mobile-mt-2">Educations</h2>
+
+                    <div class="timeline">
+                        <div class="timeline-wrapper">
+                             <div class="timeline-yr">
+                                  <span></span>
+                             </div>
+                             <div class="timeline-info">
+                                  <h3><span>Bachelor in Computer Science, Big Data</span><small>SIM-UOW</small></h3>
+                                  <p>Estimated to finish the degree programme by September 2022 with Distinction.</p>
+                             </div>
+                        </div>
+
+                        <div class="timeline-wrapper">
+                            <div class="timeline-yr">
+                                <span></span>
+                            </div>
+                            <div class="timeline-info">
+                                <h3><span>German Language Course</span><small><a href="https://busuu.com" rel="nofollow" target="_blank">Busuu</a></small></h3>
+                                <p>Self-learning German from an online language learning platform, Busuu.</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="contact py-5" id="contact">
+      <div class="container">
+        <div class="row">
+          
+          <div class="col-lg-5 mr-lg-5 col-12">
+            <div class="google-map w-100">
+              <iframe src="https://maps.google.com/maps?q=yishun&t=&z=13&ie=UTF8&iwloc=&output=embed" width="400" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
+            </div>
+
+            <div class="contact-info d-flex justify-content-between align-items-center py-4 px-lg-5">
+                <div class="contact-info-item">
+                  <h3 class="mb-3 text-white">Say hello</h3>
+                  <p class="footer-text mb-0"><a href="tel:+6588499592">(+65) 8849 9592</a></p>
+                  <p><a href="mailto:hello@company.co">web@sulabh.xyz</a></p>
+                </div>
+
+                <ul class="social-links">
+                     <li><a href="http://linkedin.com/in/sm32d" data-toggle="tooltip" data-placement="left" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a></li>
+                     <li><a href="https://bitbucket.org/sm32d" data-toggle="tooltip" data-placement="left" title="Bitbucket"><i class="fab fa-bitbucket"></i></a></li>
+                     <li><a href="#" data-toggle="tooltip" data-placement="left" title="Blog(Empty Link)"><i class="fab fa-blogger-b"></i></a></li>
+                </ul>
+            </div>
+          </div>
+
+          <div class="col-lg-6 col-12">
+            <div class="contact-form">
+              <h2 class="mb-4">Interested to work together? Let's talk</h2>
+            
+              <form id=”contact” onsubmit="postToGoogle();">
+                <div class="row">
+                  <div class="col-lg-6 col-12">
+                    <input type="text" class="form-control" name="entry.581037934" placeholder="Your Name" id="name">
+                  </div>
+
+                  <div class="col-lg-6 col-12">
+                    <input type="email" class="form-control" name="entry.771874476" placeholder="Email" id="email">
+                  </div>
+
+                  <div class="col-12">
+                    <textarea name="entry.467187738" rows="6" class="form-control" id="message" placeholder="Message"></textarea>
+                  </div>
+
+                  <div class="ml-lg-auto col-lg-5 col-12">
+                    <button name="submit" class="form-control submit-btn" type="submit" id="contact-submit" data-submit="...Sending">Submit</button>
+                    <!-- <input type="submit" class="form-control submit-btn" value="Send Button"> -->
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+     <footer class="footer py-5">
+          <div class="container">
+               <div class="row">
+
+                    <div class="col-lg-12 col-12">                                
+                        <p class="copyright-text text-center">Copyright &copy; 2022 Sulabh Mehta</p>
+                        <p class="copyright-text text-center">Designed by <a rel="nofollow" href="https://www.facebook.com/tooplate">Tooplate</a></p>
+                    </div>
+                    
+               </div>
+          </div>
+     </footer>
+
+    <div class='dev-banner' style='display: none'>
+      <i style="color: red; padding: 0 10px; font-size: x-large;" class="fas fa-exclamation"></i>
+      <p style="margin-bottom: 0; padding: 0 15px;">
+      The website is still in dev mode, that is some of the links 
+      and content might be unworkable and will be changed. Contact form at the bottom is one such object.
+      </p>
+      <button class="close"><i class="far fa-window-close"></i></button>
+    </div>
+
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/Headroom.js"></script>
+    <script src="js/jQuery.headroom.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/smoothscroll.js"></script>
+    <script src="js/custom.js"></script>
+    <script src="https://kit.fontawesome.com/409f51dbb6.js" crossorigin="anonymous"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+  <script>
+    $('.dev-banner').delay(2000).fadeIn();
+    $('.close').click(function() {
+      $('.dev-banner').fadeOut();
+    })
+    function postToGoogle() {
+      var field1 = $("#Name").val();
+      var field2 = $("#Email").val();
+      var field3 = $("#Message").val();
+
+      $.ajax({
+        url: "{https://docs.google.com/forms/u/0/d/e/1FAIpQLSf0sjz73qJMDFSQQ7TXRmez84zkGyEhgp9tR2jB2f4olaZwcA/formResponse}",
+          
+        //add your google form generated numbers below which are also the 'names' of your inputs     
+        data: {
+          "entry.581037934": field1,
+          "entry.771874476": field2,
+          "entry.467187738": field3
+        },
+        type: "POST",
+        dataType: "xml",
+        success: function (d) {
+          $('#contact').trigger('reset');
+        },
+        error: function (x, y, z) {
+          $('#contact').trigger('reset');
+        }
+      });
+      return false;
+    }
+  </script>
+
+  </body>
 </html>
